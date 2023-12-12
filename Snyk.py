@@ -31,7 +31,7 @@ def deal_with_json(json_file_path):
 
 total_start = time.time()
 timeout = 480
-image_txt = '10Kimage_nodup.txt'
+image_txt = 'images.txt'
 runtime_txt = '10k_runtime.txt'
 
 with open(image_txt, 'r') as file:

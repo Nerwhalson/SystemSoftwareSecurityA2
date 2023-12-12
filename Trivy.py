@@ -4,14 +4,14 @@ from time import time
 
 count = 0
 data = []
-with open('docker_images.txt', 'r') as file_list:
+with open('images.txt', 'r') as file_list:
     start = time()
     for line in file_list:
         name = line.strip()
         trivy_command = f'trivy image --scanners vuln -f json -o result.json {name}'
         os.system(trivy_command)
         count += 1
-        print(f'Finish detecting image {count}/10000.')
+        print(f'Finish detecting image {count}.')
         
         with open(f'result.json', 'r') as file:
             image_data = {"Image": name, "Metadata": []}
